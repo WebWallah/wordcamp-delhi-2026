@@ -1158,3 +1158,1075 @@ footer.wp-block-template-part {
 	margin-block-start: 0;
 	margin-block-end: 0;
 }
+/* ── WordCamp Delhi 2026 — Footer ────────────────────────────── */
+.site-footer a:hover,
+.site-footer a:focus-visible {
+	color: #f7ead2;
+}
+
+.site-footer .wp-block-navigation .wp-block-navigation-item__content {
+	display: block;
+}
+
+/* 36px round social pills, per the design system */
+.site-footer .social-row .wp-block-social-link {
+	width: 36px;
+	height: 36px;
+}
+
+.site-footer .social-row .wp-block-social-link-anchor {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+}
+
+.site-footer .social-row .wp-block-social-link:hover {
+	transform: none;
+	opacity: 0.85;
+}
+
+/* Two-up flex-wrap grid from mobile through tablet, with roomier gaps than the old single-column mobile stack. Flows on its own via flex-wrap rather than a fixed layout. Five-column row remains at desktop (900px+). */
+@media (max-width: 900px) {
+header nav {
+  order: 3;
+}
+}
+@media (max-width: 768px) {
+	.site-footer .footer-grid {
+		flex-wrap: wrap !important;
+		flex-direction: row;
+		row-gap: 40px;
+		column-gap: 32px;
+	}
+
+.site-footer .footer-grid > .wp-block-column:first-child {
+flex-basis: 100% !important;
+}
+	.site-footer .footer-grid > .wp-block-column {
+		flex-basis: calc(50% - 16px) !important;
+	}
+}
+
+
+
+/* The header group's own sticky setting is confined by the template-part
+   wrapper, which is only as tall as the header itself — so stick the wrapper. */
+.wp-site-blocks > header.wp-block-template-part {
+	position: sticky;
+	top: var(--wp-admin--admin-bar--position-offset, var(--wp-admin--admin-bar--height, 0px));
+	z-index: 50;
+}
+
+/* ── WordCamp Delhi 2026 — Header ────────────────────────────── */
+.site-header {
+	z-index: 50;
+	box-shadow: 0 4px 16px -10px rgba(42, 29, 18, 0.25);
+}
+
+.site-header .wp-block-navigation a:hover,
+.site-header .wp-block-navigation button:hover {
+	color: #a12e0b;
+}
+
+.site-header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container {
+	min-width: 210px;
+	padding: 10px;
+	border: 1px solid rgba(161, 46, 11, 0.18);
+	border-radius: 10px;
+	background-color: #fffaf1;
+	box-shadow: 0 20px 40px -20px rgba(42, 29, 18, 0.35);
+}
+
+.site-header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: 9px 12px;
+	border-radius: 8px;
+	font-size: 0.86rem;
+}
+
+.site-header .wp-block-navigation__responsive-container:not(.is-menu-open) .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover {
+	background-color: #fbf3e3;
+}
+
+/* The design collapses the nav to a hamburger at 900px, not core's 600px */
+@media (min-width: 600px) and (max-width: 900px) {
+	.site-header .wp-block-navigation__responsive-container-open:not(.always-shown) {
+		display: flex;
+	}
+
+	.site-header .wp-block-navigation__responsive-container:not(.hidden-by-default):not(.is-menu-open) {
+		display: none;
+	}
+}
+
+/* Mobile ("hamburger") overlay menu: left-align, and give level 1 vs level 2 distinct styling */
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content,
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+	align-items: flex-start !important;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+	width: 100%;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content {
+	width: 100%;
+	text-align: left;
+}
+
+/* Level 1 */
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > .wp-block-navigation-item > .wp-block-navigation-item__content {
+	padding: 10px 28px;
+	font-size: 1.15rem;
+	font-weight: 700;
+}
+
+/* Level 2 (submenu) */
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+	align-items: flex-start !important;
+	width: 100%;
+	margin-left: 28px !important;
+	padding-left: 16px !important;
+	border-left: 2px solid rgba(42, 29, 18, 0.35) !important;
+}
+
+.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content {
+	padding: 9px 12px;
+	font-size: 0.92rem;
+	font-weight: 500;
+	color: rgba(42, 29, 18, 0.72);
+}
+
+/* Tighten vertical rhythm in the mobile overlay: the block's own row-gap plus link padding was stacking to ~56px between level 1 items. */
+@media (max-width: 990px) {
+	.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container {
+		row-gap: 0 !important;
+	}
+
+	.site-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container {
+		padding-top: 0 !important;
+	}
+}
+
+
+/* ── WordCamp Delhi 2026 — Page components ──────────────────── */
+.eyebrow {
+	display: block;
+	margin-bottom: 0.9em;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 0.82rem;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+	color: #a12e0b;
+}
+
+.eyebrow::before {
+	content: "// ";
+	opacity: 0.55;
+}
+
+.eyebrow-invert {
+	color: #f0954a;
+}
+
+/* दिल्ली watermark sitting behind the "why Delhi" card */
+.watermark-section {
+	position: relative;
+	overflow: hidden;
+}
+
+.watermark-section > *:not(.why-delhi-watermark) {
+	position: relative;
+	z-index: 1;
+}
+
+.why-delhi-watermark {
+	position: absolute;
+	max-width: none;
+	inset: 0;
+	z-index: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	font-family: "Yatra One", cursive;
+	font-size: clamp(6rem, 22vw, 13rem);
+	line-height: 1;
+	white-space: nowrap;
+	color: rgba(247, 234, 210, 0.08);
+	pointer-events: none;
+}
+
+/* Organiser avatar */
+.person-photo {
+	display: flex;
+	width: 120px;
+	height: 120px;
+	margin: 0 auto 16px;
+	align-items: center;
+	justify-content: center;
+	border: 4px solid #fffaf1;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #16264c, #0e1a36);
+	box-shadow: 0 0 0 3px rgba(161, 46, 11, 0.18);
+	font-family: "Yatra One", cursive;
+	font-size: 1.6rem;
+	color: #f7ead2;
+}
+
+.card-hover {
+	transition: transform 0.2s cubic-bezier(0.22, 0.8, 0.3, 1), box-shadow 0.2s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+
+.card-hover:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 20px 40px -24px rgba(42, 29, 18, 0.35);
+}
+
+.wp-block-button__link {
+	transition: transform 0.18s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+
+.wp-block-button__link:hover {
+	transform: translateY(-2px);
+}
+
+/* the watermark spans the whole band, not the 720px content column */
+.watermark-section .why-delhi-watermark {
+	max-width: none;
+}
+
+
+/* --- WordCamp Delhi 2026 -- New Homepage marquee ticker (infinite scroll)
+   Added for the new Gutenberg homepage build. Namespaced with wcdh2- so it
+   never collides with the existing wcdh- design-system classes. --- */
+.wcdh2-marquee { overflow: hidden; }
+.wcdh2-marquee-track {
+	display: flex;
+	width: max-content;
+	white-space: nowrap;
+	animation: wcdh2marquee 26s linear infinite;
+}
+.wcdh2-marquee-track span {
+	position: relative;
+	padding-right: 44px;
+}
+.wcdh2-marquee-track span::after {
+	content: "•";
+	position: absolute;
+	right: 16px;
+}
+@keyframes wcdh2marquee {
+	from { transform: translateX(0); }
+	to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+	.wcdh2-marquee-track { animation: none; }
+}
+
+
+/* --- WordCamp Delhi 2026 -- New Homepage responsive card grids ---
+   The Group block's fixed "columnCount" grid layout has no built-in
+   responsive collapse, so we add the same breakpoints the design file
+   uses (900px: 4/3 cols -> 2, 640px: -> 1 column). --- */
+@media (max-width: 900px) {
+	.wcdh2-grid-4,
+	.wcdh2-grid-3 {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+}
+@media (max-width: 640px) {
+	.wcdh2-grid-4,
+	.wcdh2-grid-3 {
+		grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+	}
+}
+
+/* "Be Part of the Story" cards: keep single column on mobile (richer content than stat cards) */
+@media (max-width: 640px) {
+  .wcdh2-grid-stack-sm {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* CTA buttons: tighter padding/size on mobile so 2 buttons fit on one line when there's room */
+@media (max-width: 480px) {
+	.wp-block-buttons .wp-block-button__link {
+		padding-left: 12px !important;
+		padding-right: 12px !important;
+		font-size: 0.8rem !important;
+	}
+	.wp-block-buttons {
+		column-gap: 8px !important;
+	}
+}
+
+
+/* --- WordCamp Delhi 2026 -- New Homepage hero diamond dividers (kses/recovery-safe) --- */
+.wcdh2-diamond { width: 8px; transform: rotate(45deg); }
+.wcdh2-hairline { width: 120px; }
+.wcdh2-vdivider { width: 1px; }
+.wcdh2-avatar { width: 120px; }
+
+/* --- WordCamp Delhi 2026 -- Call for Sponsors FAQ accordion --- */
+.wcdh2-faq-list { display: flex; flex-direction: column; gap: 14px; }
+.wcdh2-faq-item {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #E8D4C8;
+  border-radius: 16px;
+  background-color: #FFFAF1;
+  overflow: hidden;
+}
+.wcdh2-faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 20px 52px 20px 24px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  color: #16264C;
+  position: relative;
+}
+.wcdh2-faq-item summary::-webkit-details-marker { display: none; }
+.wcdh2-faq-item summary::marker { content: ""; }
+.wcdh2-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  line-height: 1;
+  color: #A12E0B;
+}
+.wcdh2-faq-item[open] summary::after { content: "\2212"; }
+.wcdh2-faq-item .wcdh2-faq-answer { padding: 0 24px 20px; }
+.wcdh2-faq-item .wcdh2-faq-answer p {
+  margin: 0;
+  color: #6B5A45;
+  font-size: 0.95rem;
+}
+@media (max-width: 640px) {
+  .wcdh2-faq-item summary { padding: 16px 44px 16px 18px; font-size: 0.95rem; }
+  .wcdh2-faq-item .wcdh2-faq-answer { padding: 0 18px 16px; }
+}
+
+/* --- WordCamp Delhi 2026 -- Homepage Venue section --- */
+.wcdh2-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #FBE4D2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.wcdh2-icon-box p { margin: 0; line-height: 1; }
+
+.wcdh2-venue-map {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  width: 100%;
+  border-radius: 24px;
+  background-color: #16264C;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 34px, rgba(217,112,31,0.28) 34px, rgba(217,112,31,0.28) 36px),
+    repeating-linear-gradient(-45deg, transparent, transparent 34px, rgba(217,112,31,0.28) 34px, rgba(217,112,31,0.28) 36px);
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+@media (max-width: 782px) {
+  .wcdh2-venue-map { min-height: 280px; margin-top: 32px; }
+}
+
+/* --- WordCamp Delhi 2026 -- Venue section line icons (single-div, CSS-only, monochrome) --- */
+.wcdh2-icon-box {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #FBE4D2;
+  flex-shrink: 0;
+}
+
+.wcdh2-icon-calendar::before {
+  content: "";
+  position: absolute;
+  top: 14px; left: 12px;
+  width: 20px; height: 17px;
+  border: 2px solid #A12E0B;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.wcdh2-icon-calendar::after {
+  content: "";
+  position: absolute;
+  top: 12px; left: 12px;
+  width: 20px; height: 6px;
+  background: #A12E0B;
+  border-radius: 3px 3px 0 0;
+}
+
+.wcdh2-icon-pin::before {
+  content: "";
+  position: absolute;
+  top: 14px; left: 13.5px;
+  width: 17px; height: 17px;
+  background: #A12E0B;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+.wcdh2-icon-pin::after {
+  content: "";
+  position: absolute;
+  top: 19px; left: 19px;
+  width: 6px; height: 6px;
+  background: #FBE4D2;
+  border-radius: 50%;
+}
+
+.wcdh2-icon-transit::before {
+  content: "";
+  position: absolute;
+  top: 14px; left: 12px;
+  width: 20px; height: 16px;
+  background: #A12E0B;
+  border-radius: 6px 6px 3px 3px;
+}
+.wcdh2-icon-transit::after {
+  content: "";
+  position: absolute;
+  bottom: 11px; left: 15px;
+  width: 4px; height: 4px;
+  background: #16264C;
+  border-radius: 50%;
+  box-shadow: 9px 0 0 #16264C;
+}
+
+/* --- WordCamp Delhi 2026 -- Venue card spacing (kses/recovery-safe) --- */
+.wcdh2-venue-card { column-gap: 12px; row-gap: 12px; }
+.wcdh2-venue-card:not(:last-child) { margin-bottom: 20px; }
+/* Call for Sponsors: application form (wcdh2-sponsor-form) */
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 22px;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form > * { grid-column: 1 / -1; }
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-name,
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-text,
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-email,
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-phone {
+  grid-column: span 1;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .grunion-field-label,
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form label.wp-block-jetpack-label {
+  display: block;
+  font-family: Poppins, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: #A12E0B;
+  margin-bottom: 8px;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .grunion-label-required {
+  text-transform: none;
+  color: #B5651D;
+  font-weight: 400;
+  margin-left: 4px;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form input[type="text"],
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form input[type="email"],
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form input[type="url"],
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form input[type="tel"],
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form textarea,
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .jetpack-combobox-search,
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .jetpack-field__input-element {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #E8D4C8;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: Poppins, sans-serif;
+  color: #16264C;
+  background: #FFFFFF;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form textarea { min-height: 110px; resize: vertical; }
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .jetpack-field__input-phone-wrapper {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #E8D4C8;
+  border-radius: 10px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .jetpack-field__input-phone-wrapper .jetpack-combobox-trigger {
+  border: none;
+  border-right: 1px solid #E8D4C8;
+  border-radius: 0;
+  width: auto;
+  flex-shrink: 0;
+  background: transparent;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .jetpack-field__input-phone-wrapper .jetpack-field__input-element {
+  border: none;
+  border-radius: 0;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #E8D4C8;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-family: Poppins, sans-serif;
+  color: #16264C;
+  background: #FFFFFF;
+  cursor: pointer;
+  margin: 0;
+}
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-option input { margin: 0; accent-color: #A12E0B; }
+.wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-button__link { margin-top: 8px; }
+@media (max-width: 600px) {
+  .wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form { grid-template-columns: 1fr; }
+  .wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-name,
+  .wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-text,
+  .wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-email,
+  .wcdh2-sponsor-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-phone {
+    grid-column: 1 / -1;
+  }
+  .wcdh2-sponsor-card {
+    padding: 28px 20px !important;
+  }
+}
+
+.wcdh2-sponsor-form-wrap .wp-block-button__link {
+  background-color: #A12E0B;
+  color: #F7EAD2;
+  border-radius: 999px;
+  padding: 14px 32px;
+}
+
+.wcdh2-narrow-card, .wcdh2-sponsor-card {
+  max-width: 720px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box;
+}
+
+/* Sitewide footer newsletter subscribe (wcdh2-newsletter) */
+.wcdh2-newsletter .wp-block-jetpack-subscriptions {
+  max-width: 480px;
+  margin: 0 auto;
+}
+.wcdh2-newsletter .wp-block-jetpack-subscriptions__form-elements {
+  display: flex !important;
+  align-items: stretch;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid #E8D4C8;
+  background: #FFFFFF;
+}
+.wcdh2-newsletter input#subscribe-field {
+  flex: 1;
+  min-width: 0;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: #16264C !important;
+  font-family: Poppins, sans-serif !important;
+}
+.wcdh2-newsletter input#subscribe-field::placeholder {
+  color: #8a94ab;
+}
+.wcdh2-newsletter .wp-block-jetpack-subscriptions button[type="submit"] {
+  background-color: #A12E0B !important;
+  color: #F7EAD2 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  font-family: Poppins, sans-serif !important;
+  font-weight: 600 !important;
+  padding: 15px 28px !important;
+  white-space: nowrap;
+}
+.wcdh2-newsletter .wp-block-jetpack-subscriptions__subscribe-again a {
+  color: #A12E0B;
+}
+@media (max-width: 480px) {
+  .wcdh2-newsletter .wp-block-jetpack-subscriptions__form-elements {
+    flex-direction: column;
+    border-radius: 16px;
+  }
+  .wcdh2-newsletter .wp-block-jetpack-subscriptions__form-elements > p {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .wcdh2-newsletter input#subscribe-field {
+    text-align: center;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  .wcdh2-newsletter .wp-block-jetpack-subscriptions button[type="submit"] {
+    padding: 14px 20px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
+
+.wcdh2-timeline-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #A12E0B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.wcdh2-timeline-badge p {
+  margin: 0;
+}
+
+/* Schedule page (WordCamp Schedule block) brand styling */
+.wordcamp-schedule__date {
+  font-family: "Yatra One", cursive !important;
+  color: #16264C !important;
+  font-weight: 400 !important;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+.wordcamp-schedule__day {
+  margin-bottom: 56px;
+}
+.wordcamp-schedule__column-header {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #F7EAD2 !important;
+  background: #16264C !important;
+  font-weight: 500 !important;
+  padding: 12px 16px !important;
+}
+.wordcamp-schedule__time-slot-header {
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.85rem !important;
+  color: #A12E0B !important;
+  font-weight: 600 !important;
+  background: #FBF3E3 !important;
+}
+.wordcamp-schedule__session {
+  background: #FFFFFF;
+  border: 1px solid #E8D4C8;
+  border-radius: 12px;
+}
+.wordcamp-schedule__session-title {
+  font-family: Poppins, sans-serif !important;
+  font-weight: 600;
+  font-size: 1.05rem !important;
+  color: #16264C !important;
+}
+.wordcamp-schedule__session-title a {
+  color: #16264C !important;
+  text-decoration: none;
+}
+.wordcamp-schedule__session-title a:hover {
+  color: #A12E0B !important;
+}
+.wordcamp-schedule__session p {
+  font-family: "JetBrains Mono", monospace !important;
+  color: #6B5A45 !important;
+  font-size: 0.85rem !important;
+  margin: 4px 0 0;
+}
+.wordcamp-schedule__session-tracks dd {
+  color: #6B5A45;
+  font-size: 0.8rem;
+  font-family: Poppins, sans-serif;
+}
+.wordcamp-schedule .dashicons-star-filled {
+  font-family: initial !important;
+  width: auto !important;
+  height: auto !important;
+}
+.wordcamp-schedule .dashicons-star-filled::before {
+  content: "\2605" !important;
+  font-family: initial !important;
+  color: #d8c3ae !important;
+  font-size: 16px !important;
+}
+.wordcamp-schedule .fav-session-button[aria-pressed="true"] .dashicons-star-filled::before {
+  color: #A12E0B !important;
+}
+@media (max-width: 549px) {
+  .wordcamp-schedule__date {
+    margin-top: 16px;
+    margin-bottom: 20px;
+  }
+  .wordcamp-schedule__time-slot-header {
+    border-radius: 0;
+  }
+}
+
+/* Comparison tables (pricing/benefits) — moved from inline styles to CSS classes so core/table validates cleanly in the editor */
+.wcdh2-cmp-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFAF1;
+  border-radius: 16px;
+}
+.wcdh2-pricing-table table { min-width: 560px; }
+.wcdh2-benefits-table table { min-width: 640px; }
+.wcdh2-cmp-table thead tr {
+  background-color: #16264C;
+}
+.wcdh2-cmp-table th {
+  border: none;
+  text-align: left;
+}
+.wcdh2-pricing-table th { padding: 14px 18px; font-size: .85rem; color: #F7EAD2; }
+.wcdh2-benefits-table th { padding: 12px 16px; font-size: .82rem; color: #F7EAD2; }
+.wcdh2-pricing-table tbody { font-size: .94rem; }
+.wcdh2-benefits-table tbody { font-size: .88rem; }
+.wcdh2-cmp-table tbody tr {
+  border-bottom: 1px solid #E8D4C8;
+}
+.wcdh2-cmp-table td {
+  border: none;
+}
+.wcdh2-pricing-table td { padding: 14px 18px; }
+.wcdh2-benefits-table td { padding: 12px 16px; }
+.wcdh2-pricing-table td:nth-child(2),
+.wcdh2-pricing-table td:nth-child(3) {
+  font-weight: 700;
+  color: #16264C;
+}
+
+/* Contact page form (wcdh2-contact-form-wrap) */
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  row-gap: 22px;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form > * { grid-column: 1 / -1; }
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-name,
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-email {
+  grid-column: span 1;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .grunion-field-label,
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form label.wp-block-jetpack-label {
+  display: block;
+  font-family: Poppins, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: #A12E0B;
+  margin-bottom: 8px;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .grunion-label-required {
+  text-transform: none;
+  color: #B5651D;
+  font-weight: 400;
+  margin-left: 4px;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form input[type="text"],
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form input[type="email"],
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form input[type="tel"],
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form textarea,
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .jetpack-combobox-search,
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .jetpack-field__input-element {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #E8D4C8;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: Poppins, sans-serif;
+  color: #16264C;
+  background: #FFFFFF;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form textarea { min-height: 110px; resize: vertical; }
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .jetpack-field__input-phone-wrapper {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #E8D4C8;
+  border-radius: 10px;
+  background: #FFFFFF;
+  overflow: hidden;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .jetpack-field__input-phone-wrapper .jetpack-combobox-trigger {
+  border: none;
+  border-right: 1px solid #E8D4C8;
+  border-radius: 0;
+  width: auto;
+  flex-shrink: 0;
+  background: transparent;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .jetpack-field__input-phone-wrapper .jetpack-field__input-element {
+  border: none;
+  border-radius: 0;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-consent label {
+  font-size: 0.85rem;
+  color: #6B5A45;
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  display: block;
+}
+.wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .wp-block-button__link {
+  background-color: #A12E0B;
+  color: #F7EAD2;
+  border-radius: 999px;
+  padding: 14px 32px;
+  margin-top: 8px;
+}
+@media (max-width: 600px) {
+  .wcdh2-contact-form-wrap .wp-block-jetpack-contact-form { grid-template-columns: 1fr; }
+  .wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-name,
+  .wcdh2-contact-form-wrap .wp-block-jetpack-contact-form .wp-block-jetpack-field-email {
+    grid-column: 1 / -1;
+  }
+  .wcdh2-narrow-card {
+    padding: 28px 20px !important;
+  }
+}
+
+/* Sponsors page benefit icons (wcdh2-benefit-icon) */
+.wcdh2-benefit-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto;
+  border-radius: 14px;
+  background-color: #FBE4D2;
+  position: relative;
+  flex-shrink: 0;
+}
+.wcdh2-icon-target::before {
+  content: "";
+  position: absolute;
+  top: 15px; left: 15px;
+  width: 22px; height: 22px;
+  border: 2.5px solid #A12E0B;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.wcdh2-icon-target::after {
+  content: "";
+  position: absolute;
+  top: 22px; left: 22px;
+  width: 8px; height: 8px;
+  background: #A12E0B;
+  border-radius: 50%;
+}
+.wcdh2-icon-briefcase::before {
+  content: "";
+  position: absolute;
+  top: 21px; left: 13px;
+  width: 26px; height: 16px;
+  border: 2.5px solid #A12E0B;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.wcdh2-icon-briefcase::after {
+  content: "";
+  position: absolute;
+  top: 13px; left: 20px;
+  width: 12px; height: 9px;
+  border: 2.5px solid #A12E0B;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  box-sizing: border-box;
+}
+.wcdh2-icon-chat::before {
+  content: "";
+  position: absolute;
+  top: 14px; left: 13px;
+  width: 26px; height: 18px;
+  background: #A12E0B;
+  border-radius: 6px;
+}
+.wcdh2-icon-chat::after {
+  content: "";
+  position: absolute;
+  top: 30px; left: 18px;
+  width: 0; height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #A12E0B;
+}
+.wcdh2-icon-heart::before,
+.wcdh2-icon-heart::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 12px; height: 19px;
+  background: #A12E0B;
+  border-radius: 12px 12px 0 0;
+}
+.wcdh2-icon-heart::before {
+  left: 15px;
+  transform: rotate(-45deg);
+  transform-origin: bottom right;
+}
+.wcdh2-icon-heart::after {
+  left: 25px;
+  transform: rotate(45deg);
+  transform-origin: bottom left;
+}
+
+/* Sponsor detail page (single-wcb_sponsor template) */
+.wcdh2-sponsor-logo {
+  max-width: 320px;
+  padding: 28px 40px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  border: 1px solid #E8D4C8;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wcdh2-sponsor-logo img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 80px;
+  object-fit: contain !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+.wcdh2-sponsor-bio {
+  font-family: Poppins, sans-serif;
+  color: #6B5A45;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.wcdh2-sponsor-bio p { margin-bottom: 1.2em; }
+.wcdh2-sponsor-bio a { color: #A12E0B; }
+.wcdh2-sponsor-bio h2, .wcdh2-sponsor-bio h3, .wcdh2-sponsor-bio h4 {
+  color: #16264C;
+  font-family: Poppins, sans-serif;
+}
+
+.wcdh2-grid-4 .wp-block-image {
+  transition: transform 0.2s cubic-bezier(0.22, 0.8, 0.3, 1), box-shadow 0.2s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+.wcdh2-grid-4 .wp-block-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -24px rgba(42, 29, 18, 0.35);
+}
+.wcdh2-grid-4 .wp-block-image a { display: block; cursor: pointer; }
+
+/* Jali divider pattern (moved from inline block style to avoid a Gutenberg block-validation mismatch on background-image attrs) */
+.jali-divider {
+  background-image: url(https://delhi.wordcamp.org/2026/files/2026/08/jali-tile.png);
+  background-repeat: repeat;
+  background-size: auto 64px;
+  background-position: 50% 50%;
+}
+
+/* --- Call for Sponsors: Startup & Exclusive After-Party tiers --- */
+.wcdh2-feature-list { list-style: none; margin: 0; padding: 0; }
+.wcdh2-feature-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-family: Poppins, sans-serif;
+  color: #3D3226;
+}
+.wcdh2-feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #A12E0B;
+}
+
+.wcdh2-feature-list-quiet li { color: #3D3226; }
+.wcdh2-feature-list-quiet li::before { background: #B79C7A; }
+
+/* --- Call for Sponsors: After-Party spotlight card --- */
+.wcdh2-afterparty-card {
+  position: relative !important;
+  border-radius: 28px;
+  box-shadow: 0 0 0 2px #D9701F, 0 24px 60px -24px rgba(217,112,31,0.5), 0 10px 34px rgba(22,38,76,0.35);
+  overflow: hidden;
+  isolation: isolate;
+}
+.wcdh2-afterparty-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(https://delhi.wordcamp.org/2026/files/2026/08/jali-tile.png);
+  background-repeat: repeat;
+  background-size: auto 64px;
+  background-position: 50% 50%;
+  opacity: 0.08;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+.wcdh2-afterparty-card > * { position: relative; z-index: 1; }
+.wcdh2-afterparty-hr {
+  border-top-color: rgba(217,112,31,0.4) !important;
+  max-width: 140px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.wcdh2-feature-list-light li { color: #F7EAD2; }
+.wcdh2-feature-list-light li::before { background: #D9701F; }
+@media (max-width: 600px) {
+  .wcdh2-afterparty-card { padding-left: 28px !important; padding-right: 28px !important; }
+}
+
+/* Safety net: any pill-style paragraph (rounded-full badge with a background)
+   should always size to its content, never stretch full width — this guards
+   against inline "display" occasionally getting dropped from saved content. */
+p[style*="border-radius:999px"][style*="background-color"] {
+  display: inline-flex !important;
+}
+
+/* Hide Jetpack Sharedaddy sharing buttons site-wide */
+.sharedaddy, .sd-sharing-enabled, .sd-sharing {
+  display: none !important;
+}
+
+@media (min-width: 640px) {
+  .wcdh2-hero-info-row { flex-wrap: nowrap !important; }
+}
+.wcdh2-hero-info-row { align-items: stretch !important; }
+.wcdh2-hero-info-row .wcdh2-venue-card {
+  flex-shrink: 0 !important;
+  white-space: nowrap;
+}
