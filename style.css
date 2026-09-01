@@ -1,0 +1,1160 @@
+/*Set Font to Poppins*/
+/* Poppins for Gutenberg paragraph text only */
+.wp-block-post-content p,
+.wp-block-post-content li,
+.wp-block-post-content figcaption {
+	font-family: 'Poppins', sans-serif !important;
+}
+
+/* WordCamp Delhi 2026 — "Coming Soon" content section.
+   Scoped to .wcd-hero: no header, footer or global rules.
+   Literal colour values on purpose — this site's CSS sanitiser strips custom
+   property declarations (--foo) while leaving var() references, which silently
+   drops every colour. Do not reintroduce CSS variables here. */
+/* 1. Section shell */
+.wcd-hero {
+	background-color: #F3E7D4;
+	padding: 0;
+	font-family: "Poppins", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Twenty Twenty-Four sets its own families on headings (Cardo) and form
+   controls never inherit fonts, so pull everything back to Poppins. */
+.wcd-hero h1,
+.wcd-hero p,
+.wcd-hero a.wp-block-button__link,
+.wcd-hero input,
+.wcd-hero button,
+.wcd-hero label {
+	font-family: inherit;
+}
+
+/* 2. Hero grid */
+.wcd-hero__grid {
+	position: relative;
+	z-index: 1;
+	max-width: 1240px;
+	margin-inline: auto;
+	padding: clamp(32px, 6vw, 72px) clamp(24px, 5vw, 48px) clamp(24px, 4vw, 40px);
+	padding-bottom: 0;
+}
+
+/* Three classes: core's
+   .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column
+   sets flex-basis:0 above 782px at specificity 0,3,0, so lighter selectors lose
+   and the columns split 50/50. No child combinator: kses escapes it. */
+.wp-block-columns.wcd-hero__grid .wcd-hero__media {
+	flex: 0 1 44%;
+}
+
+.wp-block-columns.wcd-hero__grid .wcd-hero__copy {
+	flex: 0 1 56%;
+}
+
+/* 3. Logo */
+.wcd-logo {
+	margin-top: -50px;
+}
+
+.wcd-logo img {
+	display: block;
+	width: 100%;
+	max-width: 430px;
+	height: auto;
+	margin-inline: auto;
+}
+
+/* 4. Eyebrow — word colours are inline  formats set in the editor */
+.wcd-eyebrow {
+	margin: 0;
+	font-size: 1.25rem;
+	font-weight: 700;
+	letter-spacing: .01em;
+	text-transform: uppercase;
+}
+
+.wcd-eyebrow mark {
+	background-color: transparent;
+}
+
+/* 5. Headline, rule, lede */
+.wcd-title {
+	margin: .5rem 0 1.25rem;
+	color: #A03518;
+	font-size: clamp(3rem, 7vw, 5.25rem);
+	font-weight: 700;
+	line-height: 1.05;
+	letter-spacing: -.02em;
+}
+
+.wcd-rule {
+	height: 3px;
+	margin: 0 0 1.75rem;
+	border: 0;
+	opacity: 1;
+	background-color: #e8542a;
+	color: #e8542a;
+}
+
+.wcd-lede {
+	margin: 0;
+	color: #3f4a6b;
+	font-size: 1.125rem;
+	line-height: 1.8;
+}
+
+/* 6. Date + venue card — the headline act now that the counters are gone.
+   Orange rail on the left plus a lifted shadow so it reads before the copy. */
+.wcd-event {
+	max-width: 640px;
+	margin-top: 1.25rem;
+	padding: 1.4rem 1.6rem;
+	border-radius: 14px;
+	border-left: 6px solid #e8542a;
+	background-color: #ffffff;
+	box-shadow: 0 6px 22px rgba(22, 41, 91, 0.10);
+}
+
+.wcd-event__date {
+	margin: 0 0 .45rem;
+	color: #A03518;
+	font-size: clamp(1.45rem, 2.6vw, 2.05rem);
+	font-weight: 700;
+	line-height: 1.15;
+	letter-spacing: -.01em;
+}
+
+.wcd-event__venue {
+	margin: 0;
+	color: #3f4a6b;
+	font-size: 1.02rem;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+/* 7. Jetpack subscription form.
+   Jetpack renders: __container > form > p > label + input[type=email],
+   then p > hidden inputs + button[type=submit]. Targeting element types
+   instead of Jetpack's internal class names keeps this stable across updates. */
+.wcd-hero .wp-block-jetpack-subscriptions {
+	width: 100%;
+	max-width: none;
+	margin-top: 1.75rem;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions__container form {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .6rem;
+	align-items: stretch;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions__container form {
+	width: 100%;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions__container form p {
+	margin: 0;
+	flex: 1 1 220px;
+	min-width: 0;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions__container form p:last-child {
+	flex: 0 0 auto;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions input[type="email"] {
+	width: 100%;
+	padding: .95rem 1.1rem;
+	border: 1px solid #e0d8cd;
+	border-radius: 10px;
+	background-color: #ffffff;
+	color: #A03518;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.3;
+	box-shadow: none;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions input[type="email"]::placeholder {
+	color: #8b93aa;
+	font-weight: 400;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions input[type="email"]:focus {
+	border-color: ##A03518;
+	outline: 2px solid ##A03518;
+	outline-offset: 1px;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions button[type="submit"] {
+	padding: .95rem 2.25rem;
+	border: 0;
+	border-radius: 10px;
+	background-color: #e8542a;
+	color: #ffffff;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions button[type="submit"]:hover,
+.wcd-hero .wp-block-jetpack-subscriptions button[type="submit"]:focus-visible {
+	transform: translateY(-1px);
+	box-shadow: 0 10px 22px rgba(232, 84, 42, 0.3);
+}
+
+/* Already-subscribed state: Jetpack swaps the form for a link that inherits the
+   theme's black button. Recolour it as a success chip and align it left with the
+   date card instead of Jetpack's centring. */
+.wcd-hero .wp-block-jetpack-subscriptions p.is-link {
+	width: 100%;
+	margin: 0;
+	justify-content: flex-start !important;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions p.is-link a,
+.wcd-hero .wp-block-jetpack-subscriptions p.is-link a.wp-block-button__link.no-border-radius {
+	flex: 1 1 auto;
+	text-align: center;
+	padding: 1.05rem 1.5rem !important;
+	border: 2px solid #1c8b3c !important;
+	border-radius: 10px !important;
+	background-color: #ffffff;
+	color: #1c8b3c;
+	font-size: 1rem;
+	font-weight: 600;
+	letter-spacing: 0;
+	text-transform: none;
+	text-decoration: none;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions p.is-link a:hover,
+.wcd-hero .wp-block-jetpack-subscriptions p.is-link a:focus-visible {
+	background-color: #1c8b3c;
+	color: #ffffff;
+}
+
+/* 8. Call for Sponsors button + helper line */
+.wcd-actions {
+	margin-top: 1.25rem;
+}
+
+.wcd-notify .wp-block-button__link {
+	padding: 1.05rem 3.25rem;
+	border-radius: 10px;
+	background-color: #A03518;
+	color: #ffffff;
+	font-size: 1.05rem;
+	font-weight: 700;
+	letter-spacing: .06em;
+	text-transform: uppercase;
+	transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.wcd-notify .wp-block-button__link:hover,
+.wcd-notify .wp-block-button__link:focus-visible {
+	transform: translateY(-1px);
+	box-shadow: 0 10px 22px rgba(22, 41, 91, 0.25);
+}
+
+.wcd-note {
+	margin-top: 1rem;
+	color: #6b7391;
+	font-size: .95rem;
+}
+
+/* 9. Skyline band. Block themes stretch .alignfull children with
+   width: calc(100% + root padding), which causes a horizontal scrollbar. */
+.wcd-hero 
+
+
+
+/* 10. Small screens */
+@media (max-width: 781px) {
+}
+
+.wcd-logo img {
+	max-width: 300px;
+}
+
+.wcd-event {
+	margin-inline: auto;
+	padding: 1.15rem 1.25rem;
+	text-align: left;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions {
+	margin-inline: auto;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions__container form p,
+																													.wcd-hero .wp-block-jetpack-subscriptions__container form p:last-child {
+	flex: 1 1 100%;
+}
+
+.wcd-hero .wp-block-jetpack-subscriptions button[type="submit"] {
+	width: 100%;
+}
+
+.wcd-actions {
+	justify-content: center;
+}
+
+.wcd-notify .wp-block-button__link {
+	padding-inline: 2.5rem;
+}	
+}
+
+@media (max-width: 480px) {
+	.wcd-eyebrow {
+		font-size: 1.05rem;
+	}
+	
+	.wcd-event__venue {
+		font-size: .95rem;
+	}
+}
+
+/* 11. Motion preference */
+@media (prefers-reduced-motion: reduce) {
+	.wcd-notify .wp-block-button__link,
+																																																																			.wcd-hero .wp-block-jetpack-subscriptions button[type="submit"] {
+		transition: none;
+	}
+	
+	.wcd-notify .wp-block-button__link:hover,
+																																																																			.wcd-notify .wp-block-button__link:focus-visible,
+																																																																			.wcd-hero .wp-block-jetpack-subscriptions button[type="submit"]:hover,
+																																																																			.wcd-hero .wp-block-jetpack-subscriptions button[type="submit"]:focus-visible {
+		transform: none;
+	}
+}
+
+/* --------------------------------------------------------------------------
+   12. Page chrome
+   Scoped to body.page-id-659 so every other page keeps its header, footer and
+   title. The template's own H1 ("Coming Soon – 2026") is hidden because the
+   hero already says it; !important because the theme prints these late.
+   -------------------------------------------------------------------------- */
+body.page-id-659 header.wp-block-template-part,
+body.page-id-659 footer.wp-block-template-part,
+body.page-id-659 .wp-block-post-title,
+body.page-id-659 .sharedaddy,
+body.page-id-659 main .wp-block-spacer {
+	display: none !important;
+}
+
+/* With the header hidden, main's own block-gap margin is dead space. */
+body.page-id-659 main {
+	margin-top: 0 !important;
+}
+
+body.page-id-659 .entry-content {
+	margin-top: 0 !important;
+}
+
+.page-id-659 .wp-block-jetpack-subscriptions__form-elements {
+	width: 100%;
+}
+
+.page-id-659 .wp-block-jetpack-subscriptions__form-elements .wp-block-button__link {
+	margin-left: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   13. Closing cover + footer
+   The footer is now beige (#F3E7D4) to match the hero, so the page reads as one
+   surface; a hairline and the type hierarchy mark the zones instead of a colour
+   change. Structure still follows WordCamp Asia 2027 (prompt > form > logo >
+   dates > credits), with its palette inverted: navy ink on beige.
+   -------------------------------------------------------------------------- */
+/* The cover image sits last in the content, which carries the theme's global
+   side padding, so it has to break out to run edge to edge. WordPress exposes
+   that padding as custom properties; equal negative margins cancel it. */
+.wcd-footer {
+	background-color: #f3e7d4;
+	color: #a03518;
+	margin-top: 0 !important;
+	padding: 0;
+	font-family: "Poppins", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+	text-align: center;
+}
+
+.wcd-footer p,
+.wcd-footer a,
+.wcd-footer input,
+.wcd-footer button {
+	font-family: inherit;
+}
+
+.wcd-footer__subscribe {
+	max-width: 620px;
+	margin-inline: auto;
+	padding: clamp(36px, 4.5vw, 60px) clamp(24px, 5vw, 40px) clamp(24px, 3vw, 36px);
+}
+
+.wcd-footer__prompt {
+	margin: 0 0 1.35rem;
+	color: #a03518;
+	font-size: clamp(1.25rem, 2.1vw, 1.6rem);
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: -.01em;
+}
+
+.wcd-footer__logo {
+	margin: 0 auto;
+}
+
+/* No badge needed now: the navy artwork reads directly on beige. */
+.wcd-footer__logo img {
+	display: block;
+	width: 100%;
+	max-width: 150px;
+	height: auto;
+	margin-inline: auto;
+}
+
+.wcd-footer__dates {
+	margin: 1.25rem 0 0;
+	color: #a03518;
+	font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+	font-weight: 600;
+	letter-spacing: -.01em;
+	line-height: 1.35;
+}
+
+.wcd-footer__venue {
+	margin: .4rem 0 0;
+	color: #3f4a6b;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+.wcd-footer__credit {
+	margin: 1.75rem 0 0;
+	color: rgba(63, 74, 107, 0.75);
+	font-size: .875rem;
+	font-weight: 400;
+	line-height: 1.9;
+}
+
+.wcd-footer__credit a {
+	color: #a03518;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.wcd-footer__credit a:hover,
+.wcd-footer__credit a:focus-visible {
+	color: #a03518;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+/* Subscribe control: white pill with the button nested inside, per the
+   reference screenshot. The pill is the FORM, not the block wrapper, so the
+   already-subscribed row keeps its own treatment. */
+.wcd-footer .wp-block-jetpack-subscriptions {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 560px;
+	margin-inline: auto;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions__container form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0;
+	width: 100%;
+	padding: 8px;
+	border: 1px solid rgba(160, 53, 24, 0.12);
+	border-radius: 16px;
+	background-color: #ffffff;
+	box-shadow: 0 8px 24px rgba(160, 53, 24, 0.12);
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions__container form:focus-within {
+	outline: 2px solid #a03518;
+	outline-offset: 3px;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions__container form p {
+	flex: 1 1 auto;
+	width: auto;
+	min-width: 0;
+	margin: 0;
+	order: 1;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions__container form p:last-child {
+	flex: 0 0 auto;
+	order: 2;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions input[type="email"] {
+	width: 100%;
+	padding: .85rem 1.1rem !important;
+	border: 0 !important;
+	border-radius: 12px !important;
+	background-color: transparent;
+	color: #a03518;
+	font-size: 1.05rem;
+	font-weight: 500;
+	line-height: 1.3;
+	box-shadow: none;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions input[type="email"]::placeholder {
+	color: #98a0b8;
+	font-weight: 400;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions input[type="email"]:focus {
+	outline: none;
+}
+
+/* #d1481f rather than #e8542a: white text on the lighter orange falls short of
+   4.5:1, this clears it while reading as the same accent. */
+.wcd-footer .wp-block-jetpack-subscriptions button[type="submit"] {
+	width: auto;
+	padding: .95rem 1.6rem !important;
+	border: 0 !important;
+	border-radius: 12px !important;
+	background-color: #a03518 !important;
+	color: #ffffff;
+	font-size: 1.02rem;
+	font-weight: 700;
+	letter-spacing: 0;
+	text-transform: none;
+	white-space: nowrap;
+	cursor: pointer;
+	box-shadow: none;
+	transition: background-color .15s ease;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions button[type="submit"]:hover,
+.wcd-footer .wp-block-jetpack-subscriptions button[type="submit"]:focus-visible {
+	background-color: #82260f !important;
+}
+
+/* Already-subscribed row, now on a light band */
+.wcd-footer .wp-block-jetpack-subscriptions p.is-link {
+	width: 100%;
+	margin: 0;
+	justify-content: center !important;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions p.is-link a,
+.wcd-footer .wp-block-jetpack-subscriptions p.is-link a.wp-block-button__link.no-border-radius {
+	flex: 1 1 auto;
+	padding: .9rem 1.25rem !important;
+	border: 1px solid rgba(26, 107, 57, 0.25) !important;
+	border-radius: 12px !important;
+	background-color: rgba(26, 107, 57, 0.1) !important;
+	color: #1a6b39 !important;
+	font-size: .98rem;
+	font-weight: 600;
+	letter-spacing: 0;
+	text-transform: none;
+	text-decoration: none;
+}
+
+.wcd-footer .wp-block-jetpack-subscriptions p.is-link a:hover {
+	background-color: rgba(26, 107, 57, 0.18) !important;
+	color: #14522c !important;
+}
+
+@media (max-width: 781px) {
+	.wcd-footer .wp-block-jetpack-subscriptions input[type="email"] {
+		padding: .8rem .85rem !important;
+		font-size: .98rem;
+	}
+	
+	.wcd-footer .wp-block-jetpack-subscriptions button[type="submit"] {
+		padding: .85rem 1.1rem !important;
+		font-size: .95rem;
+	}
+	
+	.wcd-footer__logo img {
+		max-width: 128px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.wcd-footer .wp-block-jetpack-subscriptions button[type="submit"] {
+		transition: none;
+	}
+}
+
+/* The full-bleed cover uses 50vw, which includes the scrollbar width on some
+   platforms; clipping the content wrapper stops that becoming a scrollbar. */
+body.page-id-659 .entry-content {
+	overflow-x: clip;
+}
+
+/* The site body is #f9f9f9; make this page beige so no near-white shows
+   around the full-bleed cover or below it on short viewports. */
+body.page-id-659 {
+	background-color: #f3e7d4;
+}
+
+/* Close the block-gap seams between the hero, footer and cover: the theme adds
+   a top margin to each following sibling, and the body colour showed through
+   as a pale strip. */
+body.page-id-659 .entry-content .wcd-hero,
+body.page-id-659 .entry-content .wcd-footer,
+body.page-id-659 .entry-content .wcd-cover {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+/* The meta group carries an editor-set padding-bottom (spacing preset 40 = 64px)
+   as an inline style, which outranks class rules — hence !important. Zeroed so
+   the cover artwork's own sky supplies the breathing room, as in the reference. */
+/* Left-align the hero CTA with the copy above it. WordPress emits the buttons
+   block's justification as a generated .wp-container-... class that this host
+   prints after Additional CSS, so this needs !important to win. */
+body.page-id-659 .wcd-hero .wcd-actions {
+	justify-content: flex-start !important;
+}
+
+/* --------------------------------------------------------------------------
+   14. Cover band
+   The artwork is the background of a Cover block with the logo, dates and venue
+   inside it, so the text sits in the sky as in the reference rather than
+   stacking above a separate image.
+   -------------------------------------------------------------------------- */
+/* The cover is alignfull inside an already-full-width group, so the theme
+   applies root-padding compensation twice and it ends up wider than the
+   viewport. Zeroing the margins pins it to the parent's width. */
+.wcd-cover {
+	width: 100% !important;
+	margin-inline: 0 !important;
+	margin-block: 0 !important;
+	padding: 0 !important;
+	align-items: flex-start;
+}
+
+/* 33.34vw is the artwork's own aspect ratio (504/1512), so at desktop widths the
+   full illustration shows with no cropping; the floor keeps room for the text
+   on narrow screens. */
+.wcd-cover.wp-block-cover {
+	min-height: max(33.34vw, 430px) !important;
+}
+
+/* Cover always renders a dim layer; keep it from tinting the artwork. */
+.wcd-cover .wp-block-cover__background {
+	background-color: transparent !important;
+	opacity: 1 !important;
+}
+
+.wcd-cover .wp-block-cover__inner-container {
+	width: 100%;
+	max-width: 620px;
+	margin-inline: auto;
+	padding: clamp(24px, 3vw, 44px) clamp(20px, 4vw, 32px) 0;
+	text-align: center;
+}
+
+.wcd-cover .wcd-footer__logo {
+	margin: 0 auto;
+}
+
+.wcd-cover .wcd-footer__logo img {
+	display: block;
+	width: 100%;
+	max-width: 112px;
+	height: auto;
+	margin-inline: auto;
+	padding: 0;
+	background: none;
+	box-shadow: none;
+}
+
+.wcd-cover .wcd-footer__dates {
+	margin: .85rem 0 0;
+}
+
+.wcd-cover .wcd-footer__venue {
+	margin: .3rem 0 0;
+}
+
+@media (max-width: 781px) {
+	.wcd-cover .wcd-footer__logo img {
+		max-width: 92px;
+	}
+}
+
+.has-global-padding > .alignfull {
+	margin-top: 0;
+}
+
+/* Reusable hero style: apply the "hero-center-left" additional CSS class to any Cover block that needs a vertically-centered, left-aligned title within the content container. Not part of the wcd-* Coming Soon page system. */
+.hero-center-left {
+	align-items: center !important;
+}
+
+footer.wp-block-template-part {
+	margin-top: 0;
+}
+
+/* WordCamp Delhi 2026 homepage (page-id 1018).
+   Prefix is .wcdh-* deliberately: the Coming Soon page owns .wcd-*.
+   Literal colours only (the sanitiser drops --custom-property declarations)
+   and every rule scoped to .page-id-1018, matching the .page-id-659 convention. */
+.page-id-1018 .wcdh-sec {
+	padding: clamp(3.2rem, 7vw, 5.5rem) 0;
+	font-family: "Poppins", "Inter", system-ui, sans-serif;
+	color: #2c1810;
+}
+
+.page-id-1018 .wcdh-sec.on-cream {
+	background: #eeddc0;
+}
+
+.page-id-1018 .wcdh-sec.on-surface {
+	background: #fbf1de;
+}
+
+.page-id-1018 .wcdh-sec.on-base {
+	background: #f6ead8;
+}
+
+.page-id-1018 .wcdh-hero {
+	padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 3.5rem);
+	background: #f6ead8;
+}
+
+.page-id-1018 .wcdh-eyebrow {
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .72rem;
+	font-weight: 600;
+	letter-spacing: .18em;
+	text-transform: uppercase;
+	color: #c1440e;
+	margin: 0 0 .9rem;
+}
+
+.page-id-1018 .wcdh-h1 {
+	font-family: "Yatra One", "Sansita", Georgia, serif;
+	font-weight: 800;
+	line-height: 1.05;
+	margin: 0 0 1rem;
+	font-size: clamp(2.4rem, 7vw, 4.4rem);
+	color: #6d1f26;
+}
+
+.page-id-1018 .wcdh-h2 {
+	font-family: "Yatra One", "Sansita", Georgia, serif;
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0 0 .9rem;
+	font-size: clamp(1.7rem, 4.4vw, 2.6rem);
+	color: #6d1f26;
+}
+
+.page-id-1018 .wcdh-h3 {
+	font-family: "Poppins", "Inter", system-ui, sans-serif;
+	font-weight: 700;
+	font-size: 1.08rem;
+	line-height: 1.35;
+	margin: 0 0 .5rem;
+	color: #6d1f26;
+}
+
+.page-id-1018 .wcdh-grad {
+	color: #c1440e;
+}
+
+.page-id-1018 .wcdh-lead {
+	font-size: clamp(0.98rem, 2.2vw, 1.08rem);
+	line-height: 1.72;
+	color: #6e5240;
+	margin: 0 0 1rem;
+}
+
+.page-id-1018 .wcdh-p {
+	font-size: .95rem;
+	line-height: 1.7;
+	color: #6e5240;
+	margin: 0 0 .8rem;
+}
+
+.page-id-1018 .wcdh-center {
+	text-align: center;
+}
+
+.page-id-1018 .wcdh-hi {
+	font-family: "Yatra One", "Sansita", Georgia, serif;
+	color: #c1440e;
+	font-size: 1.1rem;
+}
+
+.page-id-1018 .wcdh-grid {
+	display: grid;
+	gap: 1.1rem;
+}
+
+.page-id-1018 .wcdh-card {
+	background: #fffaf1;
+	border: 1px solid rgba(94, 45, 26, 0.16);
+	border-radius: 1.1rem;
+	padding: 1.5rem;
+	box-shadow: 0 18px 40px rgba(74, 18, 24, 0.14);
+	transition: transform .3s ease, border-color .3s ease;
+}
+
+.page-id-1018 .wcdh-card:hover {
+	transform: translateY(-4px);
+	border-color: #c1440e;
+}
+
+.page-id-1018 .wcdh-label {
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .68rem;
+	font-weight: 600;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+	color: #c1440e;
+	display: block;
+	margin: 0 0 .5rem;
+}
+
+.page-id-1018 .wcdh-tag {
+	display: inline-block;
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .64rem;
+	font-weight: 600;
+	letter-spacing: .13em;
+	text-transform: uppercase;
+	color: #6d1f26;
+	background: rgba(193, 68, 14, 0.1);
+	border-radius: 999px;
+	padding: .3rem .7rem;
+	margin: 0 0 .7rem;
+}
+
+.page-id-1018 .wcdh-num {
+	font-family: "Yatra One", "Sansita", Georgia, serif;
+	font-size: 1.9rem;
+	color: rgba(94, 45, 26, 0.28);
+	line-height: 1;
+	display: block;
+	margin: 0 0 .5rem;
+}
+
+.page-id-1018 .wcdh-card:hover .wcdh-num {
+	color: #c1440e;
+}
+
+.page-id-1018 .wcdh-note {
+	margin: .9rem 0 0;
+	padding-top: .8rem;
+	border-top: 1px solid rgba(94, 45, 26, 0.09);
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .68rem;
+	letter-spacing: .09em;
+	text-transform: uppercase;
+	color: #c1440e;
+}
+
+.page-id-1018 .wcdh-status {
+	display: inline-block;
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .64rem;
+	font-weight: 600;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	color: #6e5240;
+	background: #eeddc0;
+	border: 1px solid rgba(94, 45, 26, 0.09);
+	border-radius: 999px;
+	padding: .3rem .7rem;
+}
+
+.page-id-1018 .wcdh-marquee {
+	background: #6d1f26;
+	overflow: hidden;
+	display: flex;
+	padding: .8rem 0;
+}
+
+.page-id-1018 .wcdh-marquee-track {
+	display: flex;
+	flex: none;
+	gap: 2.4rem;
+	padding-right: 2.4rem;
+	white-space: nowrap;
+	animation: wcdh-scroll 34s linear infinite;
+}
+
+.page-id-1018 .wcdh-marquee-track span {
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .8rem;
+	font-weight: 500;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+	color: #f2ddb8;
+}
+
+.page-id-1018 .wcdh-marquee:hover .wcdh-marquee-track {
+	animation-play-state: paused;
+}
+
+@keyframes wcdh-scroll {
+	from {
+		transform: translateX(0);
+	}
+	
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+.page-id-1018 .wcdh-stats {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1px;
+	background: rgba(94, 45, 26, 0.16);
+	border: 1px solid rgba(94, 45, 26, 0.16);
+	border-radius: 1.1rem;
+	overflow: hidden;
+}
+
+.page-id-1018 .wcdh-stat {
+	background: #fffaf1;
+	padding: 1.8rem 1rem;
+	text-align: center;
+}
+
+.page-id-1018 .wcdh-stat b {
+	display: block;
+	font-family: "Yatra One", "Sansita", Georgia, serif;
+	font-weight: 800;
+	font-size: clamp(2rem, 5.5vw, 3rem);
+	line-height: 1;
+	color: #c1440e;
+	margin: 0 0 .35rem;
+}
+
+.page-id-1018 .wcdh-stat span {
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .66rem;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: #6e5240;
+}
+
+.page-id-1018 .wcdh-dot {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: #6d1f26;
+	color: #fdf6ec;
+	font-family: "Yatra One", "Sansita", Georgia, serif;
+	font-weight: 700;
+	margin: 0 0 .9rem;
+}
+
+.page-id-1018 .wcdh-panel {
+	background: #6d1f26;
+	color: #fdf6ec;
+	border-radius: 1.9rem;
+	padding: clamp(2rem, 5vw, 3.2rem);
+	text-align: center;
+}
+
+.page-id-1018 .wcdh-panel .wcdh-h2,
+.page-id-1018 .wcdh-panel .wcdh-h3 {
+	color: #fdf6ec;
+}
+
+.page-id-1018 .wcdh-panel .wcdh-lead,
+.page-id-1018 .wcdh-panel .wcdh-p,
+.page-id-1018 .wcdh-panel .wcdh-note {
+	color: #f2ddb8;
+}
+
+.page-id-1018 .wcdh-panel .wcdh-eyebrow {
+	color: #e8a33d;
+}
+
+.page-id-1018 .wcdh-roles {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5rem;
+	justify-content: center;
+	margin-top: 1.4rem;
+}
+
+.page-id-1018 .wcdh-roles span {
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .68rem;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	border: 1px solid rgba(253, 246, 236, 0.28);
+	border-radius: 999px;
+	padding: .4rem .8rem;
+	color: #f2ddb8;
+}
+
+.page-id-1018 .wcdh-tier {
+	background: #fffaf1;
+	border: 1px solid rgba(94, 45, 26, 0.16);
+	border-radius: 1.1rem;
+	padding: 1.6rem;
+	box-shadow: 0 18px 40px rgba(74, 18, 24, 0.14);
+}
+
+.page-id-1018 .wcdh-tier.gold {
+	border-color: #e8a33d;
+	border-width: 2px;
+}
+
+.page-id-1018 .wcdh-tier b {
+	display: block;
+	font-family: "Yatra One", "Sansita", Georgia, serif;
+	font-size: 1.5rem;
+	color: #6d1f26;
+}
+
+.page-id-1018 .wcdh-tier em {
+	display: block;
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .7rem;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: #c1440e;
+	font-style: normal;
+	margin: .2rem 0 .8rem;
+}
+
+.page-id-1018 .wcdh-slot {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 92px;
+	border: 2px dashed rgba(94, 45, 26, 0.16);
+	border-radius: 1.1rem;
+	background: #fffaf1;
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .7rem;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	color: #a08769;
+}
+
+.page-id-1018 .wcdh-vrow {
+	display: flex;
+	gap: .9rem;
+	align-items: flex-start;
+	padding: 1rem 0;
+	border-bottom: 1px solid rgba(94, 45, 26, 0.09);
+}
+
+.page-id-1018 .wcdh-vrow dt {
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .64rem;
+	font-weight: 600;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+	color: #6e5240;
+	margin: 0 0 .2rem;
+}
+
+.page-id-1018 .wcdh-vrow dd {
+	margin: 0;
+	font-weight: 600;
+	color: #6d1f26;
+	line-height: 1.5;
+}
+
+.page-id-1018 .wcdh-vrow dd small {
+	display: block;
+	font-weight: 400;
+	color: #6e5240;
+	margin-top: .15rem;
+}
+
+.page-id-1018 .wcdh-jali {
+	min-height: 240px;
+	border-radius: 1.1rem;
+	background-color: #6d1f26;
+	background-image: repeating-linear-gradient(45deg, rgba(253, 246, 236, 0.16) 0 1px, transparent 1px 22px), repeating-linear-gradient(-45deg, rgba(253, 246, 236, 0.16) 0 1px, transparent 1px 22px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #f2ddb8;
+	font-family: ui-monospace, Menlo, monospace;
+	font-size: .72rem;
+	letter-spacing: .12em;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 1.5rem;
+}
+
+.page-id-1018 .wcdh-btn .wp-block-button__link {
+	font-family: "Poppins", "Inter", system-ui, sans-serif;
+	font-weight: 700;
+	font-size: .95rem;
+	border-radius: 999px;
+	padding: .95rem 1.7rem;
+	background-color: #c1440e;
+	color: #fdf6ec;
+	border: 0;
+	box-shadow: 0 14px 30px rgba(109, 31, 38, 0.35);
+}
+
+.page-id-1018 .wcdh-btn-ghost .wp-block-button__link {
+	background-color: transparent;
+	color: #6d1f26;
+	border: 2px solid rgba(94, 45, 26, 0.16);
+	box-shadow: none;
+	font-weight: 600;
+}
+
+.page-id-1018 .wcdh-link {
+	font-weight: 600;
+	font-size: .88rem;
+	color: #c1440e;
+	text-decoration: none;
+}
+
+.page-id-1018 .wcdh-link:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 780px) {
+	.page-id-1018 .wcdh-stats {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.page-id-1018 .wcdh-marquee-track {
+		animation: none;
+	}
+	
+	.page-id-1018 .wcdh-card {
+		transition: none;
+	}
+}
+
+.page-id-1018 .wcdh-marquee-wrap {
+	padding: 0;
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
